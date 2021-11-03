@@ -6,7 +6,7 @@
     width: 100%;
     z-index: 99;
     height: $header-height;
-    transition: height .3s ease;
+    transition: height 0.3s ease;
 
     @include tablet {
         height: $header-tablet-height;
@@ -24,7 +24,11 @@
     &.shrink {
         height: $header-shrink-height;
         box-shadow: $box-shadow;
-        z-index: 100; 
+        z-index: 100;
+
+        @include mobile {
+            height: $header-mobile-height;
+        }
     }
 
     &__logo {
@@ -46,11 +50,11 @@
         &__item ~ &__item {
             margin-left: 39px;
 
-            @include tablet {   
+            @include tablet {
                 margin-left: 20px;
             }
 
-            @include mobile {   
+            @include mobile {
                 margin-left: 10px;
             }
         }
@@ -77,11 +81,9 @@
                 @include flex(center, center);
 
                 @include tablet {
-                    font-size: 10px;
+                    margin-left: 10px;
                 }
             }
-
-            
 
             @include mobile {
                 font-size: 1.5rem;
@@ -104,7 +106,7 @@
                 justify-content: flex-start;
                 padding-top: 30px;
                 transform: translateX(-100%);
-                transition: transform .5s ease;
+                transition: transform 0.5s ease;
 
                 &.active {
                     transform: translateX(0);
@@ -125,7 +127,7 @@
         }
 
         &__mobile-toggle {
-            display: none;  
+            display: none;
 
             @include tablet {
                 display: block;
