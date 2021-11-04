@@ -85,7 +85,6 @@ const HeroSliderItem = props => (
             </div>
         </div>
         <div className="hero-slider__item__image">
-            <div className="shape"></div>
             <img src={props.item.img} alt="" />
         </div>
     </div>
